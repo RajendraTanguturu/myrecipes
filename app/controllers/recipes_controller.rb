@@ -5,8 +5,7 @@ class RecipesController < ApplicationController
 		@recipes = Recipe.all
 	end
 
-	def show
-		
+	def show	
 	end
 
 	def new
@@ -24,8 +23,7 @@ class RecipesController < ApplicationController
   		end
 	end
 
-	def edit
-  	
+	def edit	
 	end
 
 	def update
@@ -45,14 +43,11 @@ class RecipesController < ApplicationController
 
 	private
 
-	def set_recipe
-		@recipe = Recipe.find(params[:id])
-	end
-		
-	end
+		def set_recipe
+			@recipe = Recipe.find(params[:id])
+		end
 
-  	def recipe_params
-    	params.require(:recipe).permit(:name, :description)
-  	end
-
+	  	def recipe_params
+	    	params.require(:recipe).permit(:name, :description)
+	  	end
 end
