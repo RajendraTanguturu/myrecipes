@@ -1,14 +1,15 @@
-<h1 align= "center">List of Recipes</h1>
-<h3 align= "center">Hello Guys! Grab a recipe from the list and try it out....!</h3>
+<%= render 'shared/page_title', title: "Recipes Available" %>
+
+<h4 align="center"> "Hello Guys! Grab a recipe from the list and try it out....!" </h4>
 <% @recipes.each do |recipe| %>
   <div class="row">
     <div class="col-md-2">
-      <section class="center">
-        
+      <section class="chef_info center">
+        <%= gravatar_for(recipe.chef, size: 130) %>        
       </section>
     </div>
     <div class="col-md-8 well">
-      <h4><%= recipe.name %></h4>
+      <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
       <p><%= truncate(recipe.description, length: 150) %></p>
       <p>
         <span class="quiet"><small>Created 
