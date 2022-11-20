@@ -70,4 +70,12 @@ require 'test_helper'
     assert_not @chefdetails.valid?
   end
 
+  test "associated recipes should be destroyed" do
+    @chefdetails.save
+    @chefdetails.recipes.create!(name: "testing destroy", description: "testing destroy function") 
+    assert_difference 'Recipe.count', -1 do
+      @chefdetails.destroy
+    end
+  end
+
 end
