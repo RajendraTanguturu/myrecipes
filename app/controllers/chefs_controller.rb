@@ -11,7 +11,7 @@ class ChefsController < ApplicationController
   def create
     @chef = Chef.new(chef_params)
     if @chef.save
-      flash[:success] = "Welcome #{@chef.chefname} to MyRecipes App!"
+      flash[:success] = "Welcome #{@chef.chefname} to MyRecipes App! Your Account is successfully created! Now Login with your credentials to proceed...."
       redirect_to chef_path(@chef)
     else
       render 'new'
@@ -19,7 +19,7 @@ class ChefsController < ApplicationController
   end
 
   def index
-    @chefs = Chef.all
+    @chefs = Chef.paginate(page: params[:page], per_page: 5)
   end
 
   def show

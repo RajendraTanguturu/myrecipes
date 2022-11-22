@@ -1,9 +1,13 @@
 Feature: NonLoginUser
 
-
-Scenario: NonloggedUserActions
+Scenario: Perform all the action of the Guest User (Not Logged in)
 When I visit home page
-Then I follow "View all recipes as a Guest!"
+Then I follow "Chefs"
+And I should see "All Chefs"
+Then I follow "Chef-0"
+Then I should see"Chef chef-0's profile"
+
+
 Then I should see "All recipes"
 Then I follow "The Food Corner"
 Then I should see "Sign up"
