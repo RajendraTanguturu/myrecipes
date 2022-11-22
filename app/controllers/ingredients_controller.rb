@@ -29,6 +29,12 @@ class IngredientsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    Ingredient.find(params[:id]).destroy
+    flash[:danger] = "This ingredient is successfully deleted from all associated recipes!"
+    redirect_to ingredients_path
+  end
   
   def show
     @ingredient_recipes = @ingredient.recipes.paginate(page: params[:page], per_page: 5)

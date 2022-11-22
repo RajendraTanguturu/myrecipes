@@ -1,0 +1,6 @@
+<% 10.times do |n| %>
+ingredient_<%= n %>:
+ id: <%= n %>
+ name: <%= "ingredient_ #{n}" %>
+<% end %>
+
