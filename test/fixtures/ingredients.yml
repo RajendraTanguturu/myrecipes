@@ -1,4 +1,4 @@
-<% 10.times do |n| %>
+<% 5.times do |n| %>
 ingredient_<%= n %>:
  id: <%= n %>
  name: <%= "ingredient_ #{n}" %>

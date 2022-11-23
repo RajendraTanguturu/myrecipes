@@ -1,4 +1,4 @@
-<%= render 'shared/page_title', title: "All Chefs", titlecount:@chefs.count %>
+<%= render 'shared/page_title_count', title: "All Chefs", titlecount:@chefs.count %>
 <div align="center">
   <%= will_paginate %>
   <% @chefs.each do |chef| %>
